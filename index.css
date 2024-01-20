@@ -1,0 +1,52 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  font-family: 'Inter, sans-serif';
+  font-feature-settings: 'liga' 1, 'calt' 1; 
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+body{
+  height: 100vh;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes shineAnimation {
+  0% {
+    background-position: 200% 0;
+  }
+  /* 100% {
+    background-position: -200% 0;
+  } */
+}
+
+@keyframes scaleAnimation {
+  0%, 100% {
+    transform: scale(1);
+    background-position: 0 0;
+  }
+  50% {
+    transform: scale(1.1);
+    background-position: 100% 0;
+  }
+}
+
+.lavender-btn {
+  background: linear-gradient(45deg, #c4b5fd, #a78bfa); /* Lavender gradient */
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.632); /* White text */
+  cursor: pointer;
+  animation: scaleAnimation 2s infinite, shineAnimation 2s infinite; /* Use both animations */
+  background-size: 200% 100%;
+}
